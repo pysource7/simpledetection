@@ -22,7 +22,7 @@ class ObjectDetection:
         self.model.setInputParams(size=(608, 608), scale=1/255)
 
         self.classes = []
-        with open("dnn_model/coco.names", "r") as file_object:
+        with open("dnn/coco.names", "r") as file_object:
             for class_name in file_object.readlines():
                 class_name = class_name.strip()
                 self.classes.append(class_name)
