@@ -10,8 +10,8 @@ class ObjectDetection:
         print("Downloading DNN model")
         if not os.path.exists(dnn_folder):
           os.makedirs(dnn_folder)
-        urllib.request.urlretrieve("https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights", "/content/dnn/yolov4.weights")
-        urllib.request.urlretrieve("https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov4.cfg", "/content/dnn/yolov4.cfg")
+        urllib.request.urlretrieve("https://drive.google.com/open?id=1_NnfVgj0EDtb_WLNoXV8Mo7WKgwdYZCc", "/content/dnn/yolov4.weights")
+        urllib.request.urlretrieve("https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/csresnext50-panet-spp-original-optimal.cfg", "/content/dnn/yolov4.cfg")
         
         net = cv2.dnn.readNet("/content/dnn/yolov4.weights", "/content/dnn/yolov4.cfg")
         # Enable GPU CUDA
