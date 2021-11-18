@@ -12,6 +12,7 @@ class ObjectDetection:
           os.makedirs(dnn_folder)
         urllib.request.urlretrieve("https://pjreddie.com/media/files/yolov3-spp.weights", "/content/dnn/yolov3-spp.weights")
         urllib.request.urlretrieve("https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3-spp.cfg", "/content/dnn/yolov3-spp.cfg")
+        urllib.request.urlretrieve("https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/coco.names", "/content/dnn/coco.names")
         
         net = cv2.dnn.readNet("/content/dnn/yolov3-spp.weights", "/content/dnn/yolov3-spp.cfg")
         # Enable GPU CUDA
@@ -21,7 +22,7 @@ class ObjectDetection:
         self.model.setInputParams(size=(608, 608), scale=1/255)
 
         self.classes = []
-        with open("dnn_model/classes.txt", "r") as file_object:
+        with open("dnn_model/coco.names", "r") as file_object:
             for class_name in file_object.readlines():
                 class_name = class_name.strip()
                 self.classes.append(class_name)
