@@ -13,7 +13,7 @@ class ObjectDetection:
         urllib.request.urlretrieve("https://pjreddie.com/media/files/yolov3-spp.weights", "/content/dnn/yolov3-spp.weights")
         urllib.request.urlretrieve("https://raw.githubusercontent.com/AlexeyAB/darknet/master/cfg/yolov3-spp.cfg", "/content/dnn/yolov3-spp.cfg")
         
-        net = cv2.dnn.readNet("/content/dnn/yolov4.weights", "/content/dnn/yolov4.cfg")
+        net = cv2.dnn.readNet("/content/dnn/yolov3-spp.weights", "/content/dnn/yolov3-spp.cfg")
         # Enable GPU CUDA
         # net.setPreferableBackend(cv2.dnn.DNN_BACKEND_CUDA)
         # net.setPreferableTarget(cv2.dnn.DNN_TARGET_CUDA)
